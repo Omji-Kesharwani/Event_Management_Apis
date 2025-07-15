@@ -45,6 +45,16 @@ npm start
 
 ---
 
+## 🧱 Database Setup
+
+If you'd like to recreate the local database:
+
+```bash
+psql -U postgres -d eventdb -f schema.sql
+```
+
+---
+
 ## 🗂️ Project Structure
 
 ```
