@@ -62,6 +62,7 @@ src/
   app.js                # Main entry point
   controllers/
     eventController.js  # Event logic
+    userController.js   # User logic
   db/
     index.js            # DB connection
     testConnection.js   # DB connection test
