@@ -57,9 +57,6 @@ src/
     testConnection.js   # DB connection test
   routes/
     eventRoutes.js      # Event API routes
-  middlewares/          # (empty)
-  models/               # (empty)
-  utils/                # (empty)
 ```
 
 ---
