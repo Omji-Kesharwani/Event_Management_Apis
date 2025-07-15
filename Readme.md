@@ -67,13 +67,32 @@ src/
     testConnection.js   # DB connection test
   routes/
     eventRoutes.js      # Event API routes
+    userRoutes.js       # User API routes
 ```
 
 ---
 
 ## 📚 API Endpoints
 
-All endpoints are prefixed with `/api/events`.
+All endpoints are prefixed with `/api/events` or `/api/users`.
+
+### Create User
+
+- **POST** `/api/users/`
+- **Body:**
+  ```json
+  {
+    "name": "User Name",
+    "email": "user@example.com"
+  }
+  ```
+- **Success:** `201 Created`
+  ```json
+  { "userId": 1, "message": "User created successfully." }
+  ```
+- **Errors:** `400` (missing fields or duplicate email), `500` (server error)
+
+---
 
 ### 1. Create Event
 
@@ -182,6 +201,13 @@ All endpoints are prefixed with `/api/events`.
 
 ## 🧪 Example Usage
 
+**Create User**
+```bash
+curl -X POST http://localhost:5000/api/users/ \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Alice","email":"alice@example.com"}'
+```
+
 **Create Event**
 ```bash
 curl -X POST http://localhost:5000/api/events/ \
@@ -217,8 +243,6 @@ curl http://localhost:5000/api/events/upcoming/list
 ```bash
 curl http://localhost:5000/api/events/1/stats
 ```
-
----
 
  
 
